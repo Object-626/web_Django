@@ -1,14 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("<h4>Проверка работает<h4>")
+    return render(request, 'main/index.html')
 
 def about(request):
-    return HttpResponse("<h4>Страница про нас<h4>")
+    return render(request, 'main/about.html')
 
-def first(request):
-    return HttpResponse("<h4>Первая страница<h4>")
-
-def second(request):
-    return HttpResponse("<h4>Следующая страница<h4>")
