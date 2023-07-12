@@ -35,3 +35,10 @@ aside ul li {
     display: block;
     margin-top: 20px;
 }
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    transform: scale(1.1);
+}
+
+aside ul a {text-decoration: none}
