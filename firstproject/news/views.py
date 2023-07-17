@@ -1,7 +1,17 @@
 from django.shortcuts import render, redirect
 from .models import Artiles
 from .forms import ArtilesForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
+
+class NewsUpdateView(UpdateView):
+    model = Artiles
+    template_name = 'news/create.html'
+    form_class = ArtilesForm
+
+class NewsDeleteView(DeleteView):
+    model = Artiles
+    success_url = '/news/'
+    template_name = 'news/delete.html'
 
 def news_home(request):
     news = Artiles.objects.order_by('-date')
